@@ -1,0 +1,32 @@
+.todoWrapper {
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  /* justify-content: space-start; */
+  width: 100%;
+  background-color: #e1f2ea;
+  border-radius: 5px;
+  padding: 3px;
+  margin-top: 12px;
+  /* margin-left: -40px; */
+  /* text-decoration: line-through; */
+}
+
+.left {
+  /* background-color: red; */
+  padding: 2px 5px;
+}
+
+.todoContent {
+  /* background-color: blue; */
+  padding: 2px 5px;
+}
+
+.right {
+  /* background-color: red; */
+  padding: 2px 5px;
+}
+
+.todoContent {
+  display: inline-block;
+}

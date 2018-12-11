@@ -1,0 +1,26 @@
+.inputWrapper {
+  display: flex;
+
+}
+input {
+  width: calc(100% - 6px);
+  height: 50px;
+  border-radius: 8px 0px 0px 8px;
+  border: 2px #867ede solid;
+  padding: 10px;
+  padding-left: 37px;
+  /* line-height: 17px; */
+}
+
+.btn {
+  width: 60px;
+  height: 50px;
+  outline: none;
+  box-shadow: none;
+  border: 2px #867ede solid;
+  padding: 12px;
+  padding: 0 20px;
+  border-radius: 0px 8px 8px 0px;
+  background-color: #867ede;
+  font-size: 1.5em;
+}
