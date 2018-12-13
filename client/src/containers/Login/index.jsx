@@ -1,9 +1,9 @@
 import React from 'react'
-import { GoogleLogin } from 'react-google-login'
+import { connect } from 'react-redux'
 import axios from 'axios'
+import { GoogleLogin } from 'react-google-login'
 
 import config from '../../config'
-import { connect } from 'react-redux'
 import { signIn } from '../../actions/auth'
 
 class Login extends React.Component {
@@ -31,29 +31,29 @@ class Login extends React.Component {
   }
   render() {
     let content = !!this.state.isAuthenticated ?
-                  (
-                      <div>
-                          <p>Authenticated</p>
-                          <div>
-                              {this.state.user.email}
-                          </div>
-                          <div>
-                              <button onClick={this.logout} className="button">
-                                  Log out
-                              </button>
-                          </div>
-                      </div>
-                  ) :
-                  (
-                      <div>
-                          <GoogleLogin
-                              clientId={config.google.clientID}
-                              buttonText="CathyLogin"
-                              onSuccess={this.googleResponse}
-                              onFailure={this.googleResponse}
-                          />
-                      </div>
-                  );
+    (
+        <div>
+            <p>Authenticated</p>
+            <div>
+                {this.state.user.email}
+            </div>
+            <div>
+                <button onClick={this.logout} className="button">
+                    Log out
+                </button>
+            </div>
+        </div>
+    ) :
+    (
+        <div>
+            <GoogleLogin
+                clientId={config.google.clientID}
+                buttonText="CathyLogin"
+                onSuccess={this.googleResponse}
+                onFailure={this.googleResponse}
+            />
+        </div>
+    );
     return(
       <div className="App">
         <h1> Login Page. </h1>
