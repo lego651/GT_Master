@@ -12,6 +12,8 @@ export default(state = initialState, action) => {
       return {...state, error: '', logged: true }
     case constants.GET_USER_INFO:
       return {...state, user: action.user }
+    case constants.LOGGED_OUT:
+      return {...state, error: '', logged: false, user: null}
     default:
       return state
   }

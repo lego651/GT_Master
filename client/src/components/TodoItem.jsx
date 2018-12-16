@@ -23,7 +23,7 @@ export default class TodoItem extends React.Component {
     console.log(this.props.task.ifDone)
     console.log(this.props.task.content)
 
-    const timeBase = 1 * 60 * 60
+    const timeBase = 24 * 60 * 60
     const percentage = secondsDiff / timeBase
     const percent = percentage <= 1 ? percentage : 1;
 
@@ -42,7 +42,7 @@ export default class TodoItem extends React.Component {
           </span>
         </div>
         <div className="todoContent">
-          {this.props.task.content}
+          <p> {this.props.task.content} </p>
         </div>
         <div className="right">
           <span className='deleteIcon'

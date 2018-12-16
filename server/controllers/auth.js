@@ -21,3 +21,13 @@ export const authGoogle = function(req, res, next) {
         }
       })
 }
+
+export const signout = function(req, res, next) {
+  req.session.destroy(function(err) {
+    if(err) {
+      return res.status(400).send(err)
+    }
+    req.logout()
+    res.send('logout success')
+  })
+}

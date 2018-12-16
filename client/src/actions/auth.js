@@ -2,6 +2,7 @@ import axios from 'axios'
 
 import constants from '../constants/auth'
 import config from '../config'
+import { history } from '../router/historyRouter'
 
 export function signIn(data){
   return function(dispatch) {
@@ -10,6 +11,7 @@ export function signIn(data){
     localStorage.setItem('email', data.email)
     dispatch(reducerLoggedIn())
     dispatch(reducerSyncUserData(data))
+    history.push('/tasks')
   }
 }
 
@@ -37,5 +39,30 @@ export function reducerSyncUserData(data=null){
       type: constants.GET_USER_INFO,
       user: data
     })
+  }
+}
+
+export function reducerLogout() {
+  return function(dispatch) {
+    return dispatch({
+      type: constants.LOGGED_OUT
+    })
+  }
+}
+
+export function logout() {
+  return function(dispatch) {
+    const URL = config.serverUrl + '/signout'
+    axios.get(URL)
+      .then(response => {
+        localStorage.removeItem('token')
+        localStorage.removeItem('_id')
+        localStorage.removeItem('email')
+        dispatch(reducerLogout())
+        history.push('/home')
+      })
+      .catch(result => {
+        console.log(result)
+      })
   }
 }

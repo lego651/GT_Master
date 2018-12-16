@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import config from '../../config'
 import { getUserData, reducerLoggedIn } from '../../actions/auth'
 import UserAvatar from 'react-user-avatar'
+import { Link } from 'react-router-dom'
 import './style.css'
 
 class ProfileNav extends React.Component {
@@ -29,11 +30,11 @@ class ProfileNav extends React.Component {
     let content = !!this.props.auth.logged
                   ?
                   (
-                    <div>
+                    <Link className="AvatarLink" to={'/profile'}>
                       <UserAvatar
                           size="50"
                           name={this.props.auth.user.email.split("@")[0].substring(0,1).toUpperCase()} />
-                    </div>
+                    </Link>
                   ) :
                   (
                       <div>
@@ -43,7 +44,7 @@ class ProfileNav extends React.Component {
     return(
       <div className="Header">
         <div className="HeaderLeft">
-          Logo
+          <img src="https://i.ibb.co/3kgdNx1/Screen-Shot-2018-12-14-at-6-52-16-PM.png" />
         </div>
         <div className="HeaderRight">
           {content}

@@ -1,0 +1,22 @@
+.LoginWrapper {
+  background-color: white;
+  border-radius: 5px;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-box-shadow: 0px 0px 3px 3px #eee;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    0px 0px 3px 3px #eee;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         0px 0px 3px 3px #eee;
+}
+
+.LoginWrapper h1 {
+  font-size: 1.8em;
+  font-weight: 700;
+}
+.LoginWrapper p {
+  color: #b4b4b4;
+  font-size: 0.9em;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}

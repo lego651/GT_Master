@@ -18,8 +18,13 @@
 }
 
 .todoContent {
-  /* background-color: blue; */
+  background-color: blue;
   padding: 2px 5px;
+  width: 500px;
+}
+.todoContent p {
+  float: left;
+  display: inline-block;
 }
 
 .right {

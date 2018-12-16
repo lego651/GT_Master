@@ -26,3 +26,28 @@
 .ProfileP {
   font-weight: 100;
 }
+
+.ProfileGoBack {
+  margin: 10px auto;
+  margin-top: 70px;
+  padding: 20px 30px;
+  color: white;
+  background-color: #867ede;
+  width: 200px;
+  border-radius: 10px;
+}
+.ProfileGoBack:hover{
+  cursor: pointer;
+}
+
+.ProfileLogout {
+  margin: 20px auto;
+  padding: 20px 30px;
+  color: white;
+  background-color: #ccc;
+  width: 200px;
+  border-radius: 10px;
+}
+.ProfileLogout:hover{
+  cursor: pointer;
+}

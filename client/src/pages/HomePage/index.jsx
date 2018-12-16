@@ -2,18 +2,20 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
+import Home from '../../containers/Home'
+import './style.css'
 
-class Home extends React.Component {
+class HomePage extends React.Component {
   constructor(props){
     super(props)
   }
   render() {
     return(
-      <div>
-        <h1> Home Page. </h1>
+      <div className="row HomePageWrapper">
+        <Home />
       </div>
     )
   }
 }
 
-export default Home
+export default HomePage

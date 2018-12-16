@@ -1,0 +1,78 @@
+.HomeWrapper {
+  background-color: yellow;
+  width: 100%;
+  min-height: 800px;
+}
+
+.Section1Wrapper {
+  width: 100%;
+  height: 800px;
+  background-color: white;
+}
+
+.Section1Left {
+  width: 100%;
+  height: 800px;
+  position: relative;
+}
+.Section1Left img {
+  max-width: 250px;
+  min-width: 200px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+}
+
+.Section1Right {
+  width: 100%;
+  height: 800px;
+  position: relative;
+}
+.Section1Right img {
+  max-width: 250px;
+  min-width: 200px;
+  width: 100%;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+.Section1Middle {
+  /* background-color: yellow; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.Section1Middle .Title{
+  /* background-color: yellow; */
+  margin-top: 40px;
+  font-size: 2.5em;
+  font-weight: 700;
+}
+.Section1Middle .SubTitle{
+  /* background-color: blue; */
+  margin-top: 15px;
+  font-size: 1.3em;
+  font-weight: 500;
+  color: #999;
+}
+.Section1Middle .Btn{
+  background-color: #ff5a6e;
+  margin-top: 40px;
+  padding: 18px 50px;
+  font-size: 1em;
+  height: 60px;
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+}
+.Section1Middle .Btn:hover{
+  text-decoration: none;
+}
+.Section1Middle img {
+  position: absolute;
+  bottom: 0px;
+  /* min-width: 200px; */
+  height: 450px;
+}

@@ -71,4 +71,5 @@ export default function(app){
   app.post('/toggletask', authService.validateUser, TaskController.toggleTask)
   app.get('/weekly', authService.validateUser, TaskController.weeklyCount)
   app.get('/weeklydone', authService.validateUser, TaskController.weeklyCompletedCount)
+  app.get('/signout', AuthController.signout)
 }

@@ -82,7 +82,7 @@ export const searchLatest = function(req, res, next) {
 
   Task.find(
     {_user: user._id,
-     addedTime: {$gt:new Date(Date.now() - 1 * 60 * 60 * 1000)}
+     addedTime: {$gt:new Date(Date.now() - 24 * 60 * 60 * 1000)}
     }
   )
       .exec(function(err, results){
@@ -142,7 +142,7 @@ export const weeklyCount = function(req, res, next) {
 
   Task.find(
     {_user: user._id,
-     addedTime: {$gt:new Date(Date.now() - 7 * 60 * 60 * 1000)}
+     addedTime: {$gt:new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)}
     }
   )
       .count()
@@ -169,7 +169,7 @@ export const weeklyCompletedCount = function(req, res, next) {
   Task.find(
     {_user: user._id,
      ifDone: true,
-     addedTime: {$gt:new Date(Date.now() - 7 * 60 * 60 * 1000)}
+     addedTime: {$gt:new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)}
     }
   )
       .count()

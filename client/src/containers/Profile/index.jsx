@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import { getWeeklyCount } from '../../actions/task'
+import { logout } from '../../actions/auth'
+import { history } from '../../router/historyRouter'
 
 import './style.css'
 
@@ -33,11 +35,27 @@ class Profile extends React.Component {
           <h1 className="ProfileH"> {weeklyIncompleted} </h1>
           <p className="ProfileP"> Incompleted tasks </p>
         </div>
+        <div onClick = {() => this._redirect()}>
+          <p className="ProfileGoBack">
+            Go Back
+          </p>
+        </div>
+        <div onClick = {() => this._logout()}>
+          <p className="ProfileLogout">
+            Sign Out
+          </p>
+        </div>
       </div>
     )
   }
+  _redirect() {
+    history.push('/tasks')
+  }
   _loadData() {
     this.props.getWeeklyCount()
+  }
+  _logout() {
+    this.props.logout()
   }
 }
 
@@ -48,7 +66,8 @@ const mapStateToProps = (state) => ({
   weeklydone: state.task.weeklydone
 })
 const mapDispatchToProps = (dispatch) => ({
-  getWeeklyCount: () => dispatch(getWeeklyCount())
+  getWeeklyCount: () => dispatch(getWeeklyCount()),
+  logout: () => dispatch(logout())
 })
 export default connect(
   mapStateToProps,

@@ -5,11 +5,19 @@ import { GoogleLogin } from 'react-google-login'
 
 import config from '../../config'
 import { signIn } from '../../actions/auth'
+import { history } from '../../router/historyRouter'
+import './style.css'
 
 class Login extends React.Component {
   constructor() {
       super();
       this.state = { };
+  }
+  componentDidMount() {
+    const token = localStorage.getItem('token')
+    if(token != null && token.length > 0) {
+      history.push('/tasks')
+    }
   }
   logout = () => {
       this.setState({isAuthenticated: false, token: '', user: null})
@@ -48,15 +56,16 @@ class Login extends React.Component {
         <div>
             <GoogleLogin
                 clientId={config.google.clientID}
-                buttonText="CathyLogin"
+                buttonText="Sign in with Google"
                 onSuccess={this.googleResponse}
                 onFailure={this.googleResponse}
             />
         </div>
     );
     return(
-      <div className="App">
-        <h1> Login Page. </h1>
+      <div className="LoginWrapper">
+        <h1> Create your free account </h1>
+        <p> Start using in less than a minute </p>
         {content}
       </div>
     )
