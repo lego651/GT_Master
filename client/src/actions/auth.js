@@ -9,6 +9,7 @@ export function signIn(data){
     localStorage.setItem('token', data.token)
     localStorage.setItem('_id', data._id)
     localStorage.setItem('email', data.email)
+    localStorage.setItem('timestamp', Date.now())
     dispatch(reducerLoggedIn())
     dispatch(reducerSyncUserData(data))
     history.push('/tasks')

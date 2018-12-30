@@ -4,7 +4,7 @@ import config from '../config'
 const generateToken = (user) => {
   const timestamp = new Date().getTime();
 
-  const token = jwt.sign({sub: user.id, iat: timestamp}, config.secret)
+  const token = jwt.sign({sub: user.id, iat: timestamp, exp: Math.floor(Date.now() / 1000) + (1 * 60),}, config.secret)
 
   return token
 }
